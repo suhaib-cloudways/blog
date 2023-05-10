@@ -19,6 +19,12 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'notes' => 'required',
+            'description' => 'required',
+            'photo' => 'required',
+            'price' => 'required'
+         ]);
 
         $product = new Product();
 
